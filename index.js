@@ -3,7 +3,6 @@ const app = express();
 const bodyParse = require("body-parser");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
-const serverless = require("serverless-http");
 require("dotenv").config();
 app.use(bodyParse.json());
 app.use(cookieParser());
