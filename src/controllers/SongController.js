@@ -5,7 +5,7 @@ const fs = require("fs");
 let songUrl = "";
 
 const Storage = multer.diskStorage({
-  destination: "assets",
+  destination: "public",
   filename: (req, file, cb) => {
     songUrl = Date.now() + file.originalname;
     cb(null, songUrl);
@@ -55,7 +55,7 @@ module.exports.fetchSingleSong = async (req, res) => {
 module.exports.destroy = async (req, res) => {
   try {
     const song = await Song.findByIdAndRemove({ _id: req.params.id });
-    const path = "assets/" + song.songUrl;
+    const path = "public/" + song.songUrl;
     // console.log("songpath", path);
     deletOldfile(path);
     res.status(200).send(song);
@@ -65,7 +65,6 @@ module.exports.destroy = async (req, res) => {
 };
 
 module.exports.update = async (req, res) => {
-  // const path = "assets/1676633381005record.mp3";
   console.log("req body", req.body, "req params", req.params.id);
   const song = await Song.findByIdAndUpdate(
     req.params.id,
@@ -97,7 +96,7 @@ module.exports.updateWithImage = async (req, res) => {
           new: true,
         }
       );
-      const path = "assets/" + oldsong.songUrl;
+      const path = "public/" + oldsong.songUrl;
       deletOldfile(path);
       res.status(204).send(song);
     }

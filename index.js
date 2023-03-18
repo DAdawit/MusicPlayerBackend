@@ -26,7 +26,7 @@ app.use(
 
 app.use("/api", require("./src/routes/routes"));
 
-app.use(express.static("assets"));
+app.use(express.static("public"));
 
 // mongoose
 //   .connect(process.env.MONGODB_API_KEY, {
