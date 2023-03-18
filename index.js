@@ -28,11 +28,15 @@ app.use("/api", require("./src/routes/routes"));
 
 app.use(express.static("assets"));
 
-mongoose
-  .connect(process.env.MONGODB_API_KEY, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(console.log("db connected"))
-  .catch((err) => console.log(err));
+// mongoose
+//   .connect(process.env.MONGODB_API_KEY, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(console.log("db connected"))
+//   .catch((err) => console.log(err));
+app.use(function (err, req, res, next) {
+  res.status(422).send({ error: err.message });
+});
+
 app.listen(process.env.PORT || 3000);
