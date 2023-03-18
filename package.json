@@ -7,15 +7,11 @@
     "start": "node index.js"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cyclic-software/starter-express-api.git"
+    "type": "git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cyclic-software/starter-express-api/issues"
-  },
-  "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
+  "bugs": {},
   "dependencies": {
     "express": "^4.18.2"
   }
