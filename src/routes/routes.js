@@ -2,7 +2,7 @@ const { response } = require("express");
 const express = require("express");
 const router = express.Router();
 // const authController = require("../controller/authController");
-const SongController = require("../controllers/SongController");
+// const SongController = require("../controllers/SongController");
 
 router.get("/", (req, res) => {
   res.send({
