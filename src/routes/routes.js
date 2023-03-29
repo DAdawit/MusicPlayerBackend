@@ -19,10 +19,10 @@ router.get("/hello", (req, res) => {
 // router.post("/verifyToken", authController.verifyToken);
 // router.get("/logout", authController.logout_user);
 
-router.post("/songs", SongController.store);
-router.get("/songs", SongController.index);
-router.get("/songs/:id", SongController.fetchSingleSong);
-router.delete("/songs/:id", SongController.destroy);
-router.put("/songs/:id", SongController.update);
-router.put("/update/:id", SongController.updateWithImage);
+// router.post("/songs", SongController.store);
+// router.get("/songs", SongController.index);
+// router.get("/songs/:id", SongController.fetchSingleSong);
+// router.delete("/songs/:id", SongController.destroy);
+// router.put("/songs/:id", SongController.update);
+// router.put("/update/:id", SongController.updateWithImage);
 module.exports = router;
